@@ -2,7 +2,7 @@ FROM alpine:3.2
 MAINTAINER pjpires@gmail.com
 
 RUN apk update; \
-    apk add curl git && \
+    apk add curl git make && \
     apk add go && mkdir /gopath && \
     rm -rf /var/cache/apk/*
 

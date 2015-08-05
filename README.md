@@ -25,7 +25,6 @@ docker run  --rm \
 Or with `gb`
 
 ```
-```
 docker run  --rm \
             --volume /path/to/source:/src \
             --workdir /src \
