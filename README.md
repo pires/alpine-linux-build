@@ -2,6 +2,8 @@
 
 This repository provides a Docker image of Alpine Linux with a bunch of compilers needed to build code meant to run on Alpine Linux.
 
+[![Docker Repository on Quay.io](https://quay.io/repository/pires/alpine-linux-build/status "Docker Repository on Quay.io")](https://quay.io/repository/pires/alpine-linux-build)
+
 ## Compilers included
 
 * Go 1.4.2
@@ -14,5 +16,5 @@ This repository provides a Docker image of Alpine Linux with a bunch of compiler
 docker run  --rm \
             --volume /path/to/source:/src \
             --workdir /src \
-            pires/alpine-linux-build \
+            quay.io/pires/alpine-linux-build \
             go build -o my_binary
