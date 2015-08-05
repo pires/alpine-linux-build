@@ -6,7 +6,9 @@ This repository provides a Docker image of Alpine Linux with a bunch of compiler
 
 ## Compilers included
 
-* Go 1.4.2
+* Go 1.4.2, including
+  * [`godep`](https://github.com/tools/godep)
+  * [`gb`](http://getgb.io)
 
 ## Usage
 
@@ -18,3 +20,15 @@ docker run  --rm \
             --workdir /src \
             quay.io/pires/alpine-linux-build \
             go build -o my_binary
+```
+
+Or with `gb`
+
+```
+```
+docker run  --rm \
+            --volume /path/to/source:/src \
+            --workdir /src \
+            quay.io/pires/alpine-linux-build \
+            gb build -a
+```
