@@ -1,7 +1,6 @@
 # alpine-linux-build
 
 This repository provides a Docker image of Alpine Linux with a bunch of compilers needed to build code meant to run on Alpine Linux.
-=======
 
 ## Compilers included
 
