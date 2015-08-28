@@ -19,6 +19,8 @@ This repository provides a Docker image of Alpine Linux with a bunch of compiler
 docker run  --rm \
             --volume /path/to/source:/src \
             --workdir /src \
+			-e UID=$(id -u) \
+			-e GID=$(id -g) \
             quay.io/pires/alpine-linux-build \
             go build -o my_binary
 ```
@@ -29,6 +31,8 @@ Or with `gb`
 docker run  --rm \
             --volume /path/to/source:/src \
             --workdir /src \
+			-e UID=$(id -u) \
+			-e GID=$(id -g) \
             quay.io/pires/alpine-linux-build \
             gb build -a
 ```
@@ -39,6 +43,11 @@ Or with `make` (needs a `Makefile` file in the source root)
 docker run  --rm \
             --volume /path/to/source:/src \
             --workdir /src \
+			-e UID=$(id -u) \
+			-e GID=$(id -g) \
             quay.io/pires/alpine-linux-build \
             make
 ```
+
+The `-e UID=$(id -u)` trick causes the commands to be run with your user ID inside the container, so output files
+will be owned by you, instead of by `root` which is the default in Docker.
